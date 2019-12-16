@@ -40,8 +40,13 @@ namespace Geometry
 		const DirectX::XMFLOAT4& color = { 1.0f,1.0f,1.0f,1.0f });
 
 	// 创建只有圆柱体侧面的网格数据，slices 控制精度
-	template<class VertexType = VertexPosNormalTex,class IndexType=WORD>
+	template<class VertexType = VertexPosNormalTex,class IndexType = WORD>
 	MeshData<VertexType, IndexType>CreateCylinerWithoutCap(float radius = 1.0f, float height = 2.0f, UINT slices = 20,
+		const DirectX::XMFLOAT4& color = { 1.0f,1.0f,1.0f,1.0f });
+
+	// 创建只有圆锥体侧面网格数据，slices 控制精度
+	template<class VertexType = VertexPosNormalTex,class IndexType = WORD>
+	MeshData<VertexType, IndexType>CreateConeWithoutCap(float radius = 1.0f, float height = 2.0f, UINT slices = 20,
 		const DirectX::XMFLOAT4& color = { 1.0f,1.0f,1.0f,1.0f });
 }
 
