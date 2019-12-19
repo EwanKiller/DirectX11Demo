@@ -15,7 +15,6 @@
 #pragma comment(lib, "D3DCompiler.lib")
 #pragma comment(lib, "winmm.lib")
 
-#pragma once
 
 class D3DApp
 {
