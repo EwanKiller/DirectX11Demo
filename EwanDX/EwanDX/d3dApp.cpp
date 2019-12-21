@@ -108,6 +108,10 @@ bool D3DApp::Init()
 	{
 		return false;
 	}
+	if (!InitDirect2D())
+	{
+		return false;
+	}
 	if (!InitDirect3D())
 	{
 		return false;
@@ -372,11 +376,20 @@ bool D3DApp::InitMainWindow()
 	return true;
 }
 
+
+bool D3DApp::InitDirect2D()
+{
+	HR(D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, m_pD2DFactory.GetAddressOf()));
+	HR(DWriteCreateFactory(DWRITE_FACTORY_TYPE_SHARED, __uuidof(IDWriteFactory),
+		reinterpret_cast<IUnknown**>(m_pDWriteFactory.GetAddressOf())));
+	return true;
+}
+
 bool D3DApp::InitDirect3D()
 {
 	HRESULT hr = S_OK;
 	// 创建D3D设备 和 D3D设备上下文
-	UINT createDeviceFlags = 0;
+	UINT createDeviceFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT; // D2D需要支持BRGA格式
 #if defined(DEBUG) || defined(_DEBUG)
 	createDeviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
 #endif 

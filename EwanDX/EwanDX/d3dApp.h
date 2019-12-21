@@ -3,12 +3,16 @@
 
 #include <wrl/client.h>
 #include <string>
+#include <d2d1.h>
+#include <dwrite.h>
 #include <d3d11_1.h>
 #include <DirectXMath.h>
 #include "Mouse.h"
 #include "Keyboard.h"
 #include "GameTimer.h"
 
+#pragma  comment(lib,"d2d1.lib")
+#pragma  comment(lib,"dwrite.lib")
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "dxguid.lib")
@@ -48,6 +52,8 @@ public:
 protected:
 	// 窗口初始化
 	bool InitMainWindow();
+	// Direct2D初始化
+	bool InitDirect2D();
 	// Direct3D初始化
 	bool InitDirect3D();
 	// 计算每秒帧数并且在窗口中显示
@@ -77,6 +83,14 @@ protected:
 	// 使用模板简化类型名
 	template<class T>
 	using ComPtr = Microsoft::WRL::ComPtr<T>;
+
+	/* Direct2D */
+	// D2D工厂
+	ComPtr<ID2D1Factory> m_pD2DFactory; 
+	// D2D渲染目标
+	ComPtr<ID2D1RenderTarget> m_pD2DRenderTarget;
+	// DWrite工厂
+	ComPtr<IDWriteFactory> m_pDWriteFactory;
 
 	/* Direct3D 11 */
 	// D3D11设备
