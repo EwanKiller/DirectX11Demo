@@ -1,0 +1,9 @@
+diff a/EwanDX/EwanDX/GameApp.cpp b/EwanDX/EwanDX/GameApp.cpp	(rejected hunks)
+@@ -240,6 +240,7 @@
+ 	ZeroMemory(&ibd, sizeof(ibd));
+ 	ibd.Usage = D3D11_USAGE_IMMUTABLE;
+ 	ibd.ByteWidth = m_IndexCount * sizeof(WORD);
++ 	ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;                                                                                                                                                                                                                 =63
+ 	ibd.CPUAccessFlags = 0;
+ 	// �½�����������
+ 	InitData.pSysMem = meshData.indexVec.data();

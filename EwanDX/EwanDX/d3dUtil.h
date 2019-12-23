@@ -11,6 +11,9 @@
 #include<vector>
 #include<string>
 
+#include "DDSTextureLoader.h"	
+#include "WICTextureLoader.h"
+
 // 宏相关
 
 // 默认开启图形调试器具名化

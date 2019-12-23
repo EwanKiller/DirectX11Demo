@@ -1,7 +1,7 @@
 #include "LightHelper.hlsli"
 
 Texture2D g_Tex : register(t0);
-SamplerState g_SamLinear : register(s1);
+SamplerState g_SamLinear : register(s0);
 
 cbuffer VSConstantBuffer : register(b0)
 {
