@@ -60,6 +60,15 @@
     <ClInclude Include="WICTextureLoader.h">
       <Filter>通用文件</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstPersonCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdPersonCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="d3dApp.cpp">
@@ -94,6 +103,15 @@
     </ClCompile>
     <ClCompile Include="WICTextureLoader.cpp">
       <Filter>通用文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FirstPersonCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdPersonCamera.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
